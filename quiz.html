@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    p, li {
+      margin-bottom: 16px;
+    }
+    .remove {
+      padding: 16px;
+      margin-bottom: 16px;
+      border: solid 1px #000;
+    }
+    .div-class {
+      padding: 16px;
+      margin-bottom: 16px;
+      border: solid 1px #000;
+    }
+    .list {
+      background-color: #ccc;
+    }
+    .active {
+      background-color: pink;
+    }
+    .wrapper-class.active {
+      padding: 16px;
+      background-color: lime;
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="wrapper" class="wrapper-class">
+  <ul class="list">
+    <li class="list-item">List Item One</li>
+    <li class="list-item">List Item Two</li>
+    <li class="list-item">List Item Three</li>
+  </ul>
+  <div class="div-class">
+    <p class="paragraph">Paragraph 1:1</p>
+    <p class="paragraph">Paragraph 1:2</p>
+    <p class="paragraph">Paragraph 1:3</p>
+  </div>
+  <div class="div-class">
+    <p class="paragraph">Paragraph 2:1</p>
+    <p class="paragraph">Paragraph 2:2</p>
+    <p class="paragraph">Paragraph 2:3</p>
+  </div>
+  <div>
+    <div class="remove">This shouldn't be here.</div>
+  </div>
+  <ol class="ordered-list">
+    <li class="list-item">List Item One</li>
+    <li class="list-item">List Item Three</li>
+  </ol>
+  <div>
+    <ul class="list">
+      <li class="list-item">List Item One</li>
+      <li class="list-item">List Item Two</li>
+      <li class="list-item">List Item Three</li>
+    </ul>
+  </div>
+</div> 
+
+<script>
+// 1. Add active class to wrapper
+/* const wrapper = document.querySelector("#wrapper");
+wrapper.classList.add("active"); */
+
+// 2. Add a class of active to every list item
+
+/*const listItem = document.querySelectorAll(".list-item");
+console.log(listItem);
+listItem.forEach(item => item.classList.add('active')); */
+
+// 3. Edit task 2 to only add the class of active to the first list on the page
+  // navigation storage
+const firstLi = document.querySelectorAll("div.wrapper-class > ul.list > li");
+  // testing route
+console.log(firstLi);
+  // action
+firstLi.forEach(item => item.classList.add('active'));
+
+// 4. Edit task 3 to only highlight the final list item, inside the list that you found in step 3
+
+// 5. Remove the div that shouldn't be there
+
+// 6. Add a fourth list item to final list of the page, with the text "List Item Three"
+
+// 7. Add the missing list item to the ordered list, with the text "List Item Two"
+
+// 8. If you have used an ID in any of your answers, try changing it to use a class or element selector ('div', 'div > ul', etc, for example)
+
+/*
+BONUS ROUND:
+
+You should now have the skills to add your desired CSS effect on your gallery page,
+by reacting to the user hovering over an image. Remember, you are changing ALL
+of the other images when that happens. Think about what is the most efficient way of doing that.
+For example, if I wanted all items in a list to be red, I could add a class of 'red' to all of
+those items:
+<style>
+  li.red { color: red }
+</style>
+<ul>
+  <li class="red">Text</li>
+  <li class="red">Text</li>
+  <li class="red">Text</li>
+</ul>
+
+BUT, it would be far more efficient to edit my CSS, and add the class once:
+<style>
+  ul.red li { color: red }
+</style>
+<ul class="red">
+  <li>Text</li>
+  <li>Text</li>
+  <li>Text</li>
+</ul>
+
+REMEMBER - DOM manipulation is slow (it's all relative, but let's just agree
+that it IS slow), while CSS is blazingly fast. Defer whatever you can away
+from the JavaScript and into the CSS.
+
+Give it a go, and we can go through my solution in the next lesson.
+*/
+</script>
+
+</body>
+</html>
